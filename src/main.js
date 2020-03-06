@@ -17,6 +17,7 @@ function setup() {
     colums = width / resolution;
     rows = height / resolution;
 
+    // Assigns a random bit value to each grid
     grid = make2DArray(colums, rows);
     for (let i = 0; i < colums; i++) {
         for (let j = 0; j < rows; j++) {
@@ -26,14 +27,17 @@ function setup() {
 }
 
 function draw() {
-    background(0);
+    // Make our background blue
+    background('blue');
 
     for (let i = 0; i < colums; i++) {
         for (let j = 0; j < rows; j++) {
             let x = i * resolution;
             let y = j * resolution;
+
+            // if one of the grids value == 1, make that grid red
             if (grid[i][j] == 1) {
-                fill(255);
+                fill('red');
                 rect(x, y, resolution, resolution);
             }
         }
